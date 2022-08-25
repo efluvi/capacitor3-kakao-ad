@@ -97,7 +97,7 @@ public class Capacitor3KakaoAdPlugin: CAPPlugin {
             let price = Double(dic["price"]!) ?? 0
             totalQuantity += quantity
             totalPrice += price
-            let product_1 = KakaoAdDetailProduct(name: dic["name"], quantity:quantity , price:price )
+            let product_1 = KakaoAdDetailProduct(name: dic["name"], quantity: Int(quantity) , price:price )
             products.append(product_1)
         })
         KakaoAdTracker.sendPurchaseEvent(tag: tag, totalQuantity: Int(totalQuantity), totalPrice: totalPrice, currency:currency, products:products)
